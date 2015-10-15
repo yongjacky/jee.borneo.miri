@@ -3,10 +3,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
 	http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.borneo.framework</groupId>
+	<groupId>borneo.framework</groupId>
 	<artifactId>jee.borneo.miri</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0.1-RELEASE</version>
 	<name>borneo.miri</name>
 	<url>http://maven.apache.org</url>
 
@@ -20,7 +20,7 @@
 		<commonLang.version>2.3</commonLang.version>
 		<javaxMail.version>1.4</javaxMail.version>
 		<freemarker.version>2.3.20</freemarker.version>
-		<codehausJackson.version>1.5.0</codehausJackson.version>
+		<codehausJackson.version>1.7.4</codehausJackson.version>
 		<axetKaptcha.version>0.0.9</axetKaptcha.version>
 		<slf4j-log4j.version>1.5.6</slf4j-log4j.version>
 		<hibernate.version>3.3.2.GA</hibernate.version>
@@ -87,6 +87,7 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
 			<version>${servletApi.version}</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>commons-lang</groupId>
@@ -205,10 +206,8 @@
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>jsp-api</artifactId>
 			<version>2.2</version>
+			<scope>provided</scope>
 		</dependency>
-		
-		
-		
 	</dependencies>
 
 	<build>
@@ -230,7 +229,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
+				<version>2.5.1</version>
 				<configuration>
 					<source>${jdk.version}</source>
 					<target>${jdk.version}</target>
@@ -250,7 +249,7 @@
 					<!-- MainClass in mainfest make a executable jar -->
 					<archive>
 					  <manifest>
-						<mainClass>com.borneo.framework</mainClass>
+						<mainClass>com.borneo.framework.listener.SysListener</mainClass>
 					  </manifest>
 					</archive>
 
@@ -267,7 +266,86 @@
 				</executions>
 			</plugin>
 
+            <plugin>
+			  <groupId>com.github.github</groupId>
+			  <artifactId>site-maven-plugin</artifactId>
+			  <version>0.11</version>
+			  <configuration>
+			    <message>Maven artifacts for ${project.version}</message>
+			    <noJekyll>true</noJekyll>
+			    <outputDirectory>${project.build.directory}/mvn-repo
+			       </outputDirectory>
+			    <branch>refs/heads/mvn-repo</branch>
+			    <merge>true</merge>
+			    <includes>
+			      <include>**/*</include>
+			    </includes>
+			    <repositoryName>jee.borneo.miri</repositoryName>
+			    <repositoryOwner>yongjacky</repositoryOwner>
+			    <server>github</server>
+			  </configuration>
+			  <executions>
+			    <execution>
+			      <goals>
+			        <goal>site</goal>
+			      </goals>
+			      <phase>deploy</phase>
+			    </execution>
+			  </executions>
+			</plugin> 
+			
+			<plugin>
+		        <artifactId>maven-deploy-plugin</artifactId>
+		        <version>2.8.1</version>
+		        <configuration>
+		            <altDeploymentRepository>internal.repo::default::file://${project.build.directory}/mvn-repo</altDeploymentRepository>
+		        </configuration>
+		    </plugin>
 		</plugins>
 	</build>
 
+	<reporting>
+	    <plugins>
+	        <plugin>
+	            <groupId>org.apache.maven.plugins</groupId>
+	            <artifactId>maven-project-info-reports-plugin</artifactId>
+	            <version>2.8</version>
+	            <configuration>
+	                <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+	            </configuration>
+	        </plugin>
+	    </plugins>
+	</reporting>
+
+	<repositories>
+	  <repository>
+	    <id>jee.borneo.miri-mvn-repo</id>
+	    <url>https://raw.github.com/yongjacky/jee.borneo.miri/mvn-repo/</url>
+	    <snapshots>
+	      <enabled>true</enabled>
+	      <updatePolicy>always</updatePolicy>
+	    </snapshots>
+	  </repository>
+	</repositories>
+	
+	<distributionManagement>
+	    <repository>
+	        <id>internal.repo</id>
+	        <name>Temporary Staging Repository</name>
+	        <url>file://${project.build.directory}/mvn-repo</url>
+	    </repository>
+	</distributionManagement>
+	
+	<scm>
+	  <connection>scm:git:git@github.com:yongjacky/jee.borneo.miri.git</connection>
+	  <developerConnection>scm:git:git@github.com:yongjacky/jee.borneo.miri.git</developerConnection>
+	  <url>git@github.com:yongjacky/jee.borneo.miri.git</url>
+	</scm>
+	
+	<licenses>
+	  <license>
+	    <name>The Apache License, Version 2.0</name>
+	    <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+	  </license>
+	</licenses>
 </project>
