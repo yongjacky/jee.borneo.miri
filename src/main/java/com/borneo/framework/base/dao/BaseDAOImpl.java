@@ -41,7 +41,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.orm.hibernate3.SessionFactoryUtils;
-import org.springframework.stereotype.Repository;
 import org.springframework.util.Assert;
 
 import com.borneo.framework.base.vo.TableModel;
@@ -53,13 +52,13 @@ import com.borneo.framework.spring.mvc.tag.SearchValueBindControllerTag;
 /**
  * @author peter.yuan
  */
-@Repository("baseDAO")
 public class BaseDAOImpl implements BaseDAO {
 
     private static final boolean CACHEQUERIES_DEFAULT = true;
     protected final Logger log = LoggerFactory.getLogger(getClass());
     protected SessionFactory sessionFactory;
     private JdbcTemplate jdbcTemplate;
+    @Resource
     private HibernateTemplate hibernateTemplate;
 
     private static void bindParameters(Query query, Object[] params, Type[] types) {
@@ -76,6 +75,11 @@ public class BaseDAOImpl implements BaseDAO {
         }
     }
 
+    public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+		this.hibernateTemplate.setCacheQueries(CACHEQUERIES_DEFAULT);
+	}
+    
     /**
      * @return the sessionFactory
      */
@@ -93,12 +97,13 @@ public class BaseDAOImpl implements BaseDAO {
     /**
      * @param sessionFactory the hibernateTemplate to set
      */
+    /**
     @Resource
     public void setHibernateTemplate(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
         this.hibernateTemplate = new HibernateTemplate(this.sessionFactory);
         this.hibernateTemplate.setCacheQueries(CACHEQUERIES_DEFAULT);
-    }
+    }**/
 
     @Override
     public Session getSession() {
