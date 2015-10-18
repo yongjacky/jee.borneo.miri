@@ -490,6 +490,10 @@ public class DateUtils {
     	return cal.get(Calendar.SECOND);
     }
     
+    public static long getUnixTime(Date date){
+    	return (date.getTime()/1000L);
+    }
+    
     public static void main(String[] args) {
     	String dateTZ = dateToStr(new Date(), "yyyy-MM-dd HH:mm Z");
     	System.out.println(dateTZ);
