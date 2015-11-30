@@ -6,7 +6,8 @@
 	<version>1.1.6</version>
 	<name>borneo.miri</name>
 	<url>https://github.com/yongjacky/jee.borneo.miri</url>
-
+    <description>A JEE Framework build by Nexstream</description>
+     
 	<properties>
 	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	    
@@ -381,7 +382,7 @@
 	  <developerConnection>scm:git:git@github.com:yongjacky/jee.borneo.miri.git</developerConnection>
 	  <url>git@github.com:yongjacky/jee.borneo.miri.git</url>
 	  <tag>jee.borneo.miri-1.1.6</tag>
-  </scm>
+    </scm>
 	
 	<developers>
 	    <developer>
