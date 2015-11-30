@@ -59,7 +59,7 @@ public class CaptchaImageCreateController extends BaseController {
     }
 
     /**
-     * @param request
+     * @param request n/a
      * @return if exist,return false;else return true
      */
     @RequestMapping(value = "/captcha-image/check", method = RequestMethod.GET)

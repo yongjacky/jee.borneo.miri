@@ -94,17 +94,6 @@ public class BaseDAOImpl implements BaseDAO {
         return hibernateTemplate;
     }
 
-    /**
-     * @param sessionFactory the hibernateTemplate to set
-     */
-    /**
-    @Resource
-    public void setHibernateTemplate(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
-        this.hibernateTemplate = new HibernateTemplate(this.sessionFactory);
-        this.hibernateTemplate.setCacheQueries(CACHEQUERIES_DEFAULT);
-    }**/
-
     @Override
     public Session getSession() {
         return getSession(hibernateTemplate.isAllowCreate());
@@ -115,82 +104,46 @@ public class BaseDAOImpl implements BaseDAO {
         return allowCreate ? SessionFactoryUtils.getSession(hibernateTemplate.getSessionFactory(), hibernateTemplate.getEntityInterceptor(), hibernateTemplate.getJdbcExceptionTranslator()) : SessionFactoryUtils.getSession(hibernateTemplate.getSessionFactory(), false);
     }
 
-    /*
-     * (non-Javadoc)
-     * @see com.digitalchina.dcis.core.dao.ICommonDao#delete(java.lang.Object)
-     */
     @Override
     public void delete(Object entity) {
         getHibernateTemplate().delete(entity);
     }
 
-    /*
-     * (non-Javadoc)
-     * @see com.digitalchina.dcis.core.dao.ICommonDao#deleteAll(java.util.Collection)
-     */
     @Override
     public void deleteAll(Collection collections) {
         getHibernateTemplate().deleteAll(collections);
     }
 
-    /*
-     * (non-Javadoc)
-     * @see com.digitalchina.dcis.core.dao.ICommonDao#execute(org.springframework.orm.hibernate3.HibernateCallback)
-     */
     @Override
     public Object execute(HibernateCallback action) throws DataAccessException {
         return getHibernateTemplate().execute(action);
     }
 
-    /*
-     * (non-Javadoc)
-     * @see com.digitalchina.dcis.core.dao.ICommonDao#find(java.lang.String)
-     */
     @Override
     public List find(String query) {
         return getHibernateTemplate().find(query);
     }
 
-    /*
-     * (non-Javadoc)
-     * @see com.digitalchina.dcis.core.dao.ICommonDao#find(java.lang.String, java.lang.Object)
-     */
     @Override
     public List find(String query, Object parameter) {
         return getHibernateTemplate().find(query, parameter);
     }
 
-    /*
-     * (non-Javadoc)
-     * @see com.digitalchina.dcis.core.dao.ICommonDao#find(java.lang.String, java.lang.Object[])
-     */
     @Override
     public List find(String query, Object[] parameters) {
         return getHibernateTemplate().find(query, parameters);
     }
 
-    /*
-     * (non-Javadoc)
-     * @see com.digitalchina.dcis.core.dao.ICommonDao#findAll(java.lang.Class)
-     */
     @Override
     public List findAll(Class entity) {
         return getHibernateTemplate().find("from " + entity.getName());
     }
 
-    /*
-     * (non-Javadoc)
-     * @see com.digitalchina.dcis.core.dao.ICommonDao#findByCriteria(org.hibernate.criterion.DetachedCriteria)
-     */
     @Override
     public List findByCriteria(final DetachedCriteria detachedCriteria) {
         return findByCriteria(detachedCriteria, -1, -1);
     }
 
-    /*
-     * (non-Javadoc)
-     * @see com.digitalchina.dcis.core.dao.ICommonDao#findByCriteria(org.hibernate.criterion.DetachedCriteria, int, int)
-     */
     @Override
     public List findByCriteria(final DetachedCriteria detachedCriteria, final int maxResults, final int firstResult) {
         Assert.notNull(detachedCriteria, "DetachedCriteria must not be null");
@@ -229,28 +182,16 @@ public class BaseDAOImpl implements BaseDAO {
         return criteria.list();
     }
 
-    /*
-     * (non-Javadoc)
-     * @see com.digitalchina.dcis.core.dao.ICommonDao#findPageByCriteria(org.hibernate.criterion.DetachedCriteria)
-     */
     @Override
     public PaginationSupport findPageByCriteria(DetachedCriteria detachedCriteria) {
         return findPageByCriteria(detachedCriteria, PaginationSupport.PAGESIZE, 0);
     }
 
-    /*
-     * (non-Javadoc)
-     * @see com.digitalchina.dcis.core.dao.ICommonDao#findPageByCriteria(org.hibernate.criterion.DetachedCriteria, int)
-     */
     @Override
     public PaginationSupport findPageByCriteria(DetachedCriteria detachedCriteria, int startIndex) {
         return findPageByCriteria(detachedCriteria, PaginationSupport.PAGESIZE, startIndex);
     }
 
-    /*
-     * (non-Javadoc)
-     * @see com.digitalchina.dcis.core.dao.ICommonDao#findPageByCriteria(org.hibernate.criterion.DetachedCriteria, int, int)
-     */
     @Override
     public PaginationSupport findPageByCriteria(DetachedCriteria detachedCriteria, int pageSize, int startIndex) {
         Assert.notNull(detachedCriteria, "DetachedCriteria must not be null");
@@ -280,8 +221,8 @@ public class BaseDAOImpl implements BaseDAO {
     }
 
     /**
-     * @param detachedCriteria
-     * @return
+     * @param detachedCriteria n/a
+     * @return n/a
      */
     public int getCountByCriteria4Cartoon(final DetachedCriteria detachedCriteria) {
         Integer count = (Integer) getHibernateTemplate().executeWithNativeSession(new HibernateCallback() {

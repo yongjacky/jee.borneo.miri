@@ -60,27 +60,9 @@ public interface BaseService {
 
     PaginationSupport findPageByCriteria(final DetachedCriteria detachedCriteria, final int total, final int pageSize, final int startIndex);
 
-    /**
-     * use findPageByCriteria(TableModel tableModel,DetachedCriteria detachedCriteria,int pageSize,int startIndex) instead
-     * @param request
-     * @param detachedCriteria
-     * @param total
-     * @param pageSize
-     * @param startIndex
-     * @return
-     */
     @Deprecated
     PaginationSupport findPageByCriteria(final HttpServletRequest request, final DetachedCriteria detachedCriteria, final int total, final int pageSize, final int startIndex);
 
-    /**
-     * use findPageByCriteria(TableModel tableModel,DetachedCriteria detachedCriteria,int pageSize,int startIndex) instead
-     * @param tableModel
-     * @param detachedCriteria
-     * @param total
-     * @param pageSize
-     * @param startIndex
-     * @return
-     */
     @Deprecated
     PaginationSupport findPageByCriteria(final TableModel tableModel, final DetachedCriteria detachedCriteria, final int total, final int pageSize, final int startIndex);
 
@@ -108,20 +90,8 @@ public interface BaseService {
 
     void merge(Object object);
 
-    /**
-     * default locale is english
-     * @param key
-     * @param params
-     * @return
-     */
     String getMessage(String key, Object... params);
 
-    /**
-     * @param key
-     * @param params
-     * @param locale
-     * @return
-     */
     String getMessage(String key, Object[] params, Locale locale);
 
     void evictHibernateCache() throws Exception;

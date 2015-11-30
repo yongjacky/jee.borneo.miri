@@ -37,7 +37,7 @@ public class FreemarkerUtil {
     }
 
     /**
-     * @param args
+     * @param args n/a
      */
     public static void main(String[] args) {
         // TODO Auto-generated method stub

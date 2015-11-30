@@ -16,9 +16,6 @@ import org.springframework.util.Assert;
 
 public class BaseUserDetails implements UserDetails, CredentialsContainer {
 
-    /**
-     *
-     */
     private static final long serialVersionUID = 5748042689463721972L;
     private String password;
     private String username;
@@ -45,9 +42,6 @@ public class BaseUserDetails implements UserDetails, CredentialsContainer {
     public Date getLoginTime() {
         return loginTime;
     }
-
-    // ~ Methods
-    // ========================================================================================================
 
     public void setLoginTime(Date loginTime) {
         this.loginTime = loginTime;
@@ -142,11 +136,6 @@ public class BaseUserDetails implements UserDetails, CredentialsContainer {
         password = null;
     }
 
-    /**
-     * Returns {@code true} if the supplied object is a {@code User} instance with the same {@code username} value.
-     * <p/>
-     * In other words, the objects are equal if they have the same username, representing the same principal.
-     */
     @Override
     public boolean equals(Object rhs) {
         if (rhs instanceof User) {
@@ -155,9 +144,6 @@ public class BaseUserDetails implements UserDetails, CredentialsContainer {
         return false;
     }
 
-    /**
-     * Returns the hashcode of the {@code username}.
-     */
     @Override
     public int hashCode() {
         return username.hashCode();

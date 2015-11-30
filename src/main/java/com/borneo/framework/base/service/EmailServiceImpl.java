@@ -36,15 +36,14 @@ public class EmailServiceImpl extends JavaMailSenderImpl implements EmailService
 
     /**
      * filter email by using EmailValidator.getInstance().isValid().
-     * @param emailAddresses
-     * @return
+     * @param emailAddresses n/a
+     * @return n/a
      */
     /**
      * Send email.<br>
      * Thread will be use.<br>
      * Custom message will be use.<br>
-     * @param msg
-     * @param emailAddress
+     * @throws Exception n/a
      */
 
     @PostConstruct

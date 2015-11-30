@@ -34,10 +34,10 @@ public class BarCodeImageUtils {
     //    }
 
     /**
-     * @param content
-     * @param destPath
-     * @param width
-     * @param height
+     * @param content n/a
+     * @param destPath n/a
+     * @param width na
+     * @param height na
      * @return will return a path (destPath.png)
      */
     public static String generateQRMatrixImage(String content, String destPath, int width, int height) {

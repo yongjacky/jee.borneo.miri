@@ -126,6 +126,7 @@ public class SearchValueBindControllerTag extends TagSupport implements TryCatch
 
     /**
      * Set the value of the '<code>size</code>' attribute. May be a runtime expression.
+     * @param size n/a
      */
     public void setSize(String size) {
         this.size = size;
@@ -133,6 +134,7 @@ public class SearchValueBindControllerTag extends TagSupport implements TryCatch
 
     /**
      * Get the value of the '<code>size</code>' attribute.
+     * @return n/a
      */
     protected String getSize() {
         return this.size;
@@ -140,6 +142,7 @@ public class SearchValueBindControllerTag extends TagSupport implements TryCatch
 
     /**
      * Set the value of the '<code>maxlength</code>' attribute. May be a runtime expression.
+     * @param maxlength n/a
      */
     public void setMaxlength(String maxlength) {
         this.maxlength = maxlength;
@@ -147,6 +150,7 @@ public class SearchValueBindControllerTag extends TagSupport implements TryCatch
 
     /**
      * Get the value of the '<code>maxlength</code>' attribute.
+     * @return n/a
      */
     protected String getMaxlength() {
         return this.maxlength;
@@ -154,6 +158,7 @@ public class SearchValueBindControllerTag extends TagSupport implements TryCatch
 
     /**
      * Set the value of the '<code>alt</code>' attribute. May be a runtime expression.
+     * @param alt n/a
      */
     public void setAlt(String alt) {
         this.alt = alt;
@@ -161,6 +166,7 @@ public class SearchValueBindControllerTag extends TagSupport implements TryCatch
 
     /**
      * Get the value of the '<code>alt</code>' attribute.
+     * @return n/a
      */
     protected String getAlt() {
         return this.alt;

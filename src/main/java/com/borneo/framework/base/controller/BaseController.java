@@ -46,10 +46,10 @@ public class BaseController {
 
     /**
      * check param pageNo is big than database pagination
-     * @param request
-     * @param total
-     * @param recordNum
-     * @return
+     * @param request n/a
+     * @param total n/a
+     * @param recordNum n/a
+     * @return n/a
      */
     protected boolean checkPageNo(HttpServletRequest request, int total, int recordNum) {
         String paramPageNo = request.getParameter(PageConstant.PAGE_FORM_CURRENT_PAGE_NAME);
@@ -65,8 +65,8 @@ public class BaseController {
 
     /**
      * eg: total 5 records, every page display 2 records. when delete the third record, need navigation to page2
-     * @param request
-     * @return
+     * @param request n/a
+     * @return n/a
      */
     protected String guessCorrectPageUrl(HttpServletRequest request) {
         String queryString = request.getQueryString();

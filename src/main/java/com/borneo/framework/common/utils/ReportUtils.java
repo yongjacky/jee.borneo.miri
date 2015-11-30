@@ -60,8 +60,8 @@ public class ReportUtils {
 
     /**
      * get Content type
-     * @param docType
-     * @return
+     * @param docType n/a
+     * @return n/a
      */
     public String getContentType(DocType docType) {
         String contentType = "text/html";

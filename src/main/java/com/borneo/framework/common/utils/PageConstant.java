@@ -75,8 +75,8 @@ public class PageConstant {
 
     /**
      * return current locale,if session locale is empty,get it from request
-     * @param request
-     * @return
+     * @param request na
+     * @return na
      */
     public static String getLocale(HttpServletRequest request) {
         //        String localeCode = request.getLocale().toString();

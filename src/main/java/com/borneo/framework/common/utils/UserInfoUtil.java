@@ -17,7 +17,7 @@ public class UserInfoUtil {
 
     /**
      * get current user via spring security framework
-     * @return
+     * @return n/a
      */
     public static TappUser getCurrentUser() {
         if (SecurityContextHolder.getContext().getAuthentication() == null) {

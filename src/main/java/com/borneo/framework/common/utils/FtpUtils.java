@@ -43,7 +43,7 @@ public class FtpUtils {
      * @param username 用户名
      * @param password 密码
      * @return 是否连接成功
-     * @throws IOException
+     * @throws IOException n/a
      */
     public boolean connect(String hostname, int port, String username, String password) throws IOException {
         ftpClient.connect(hostname, port);
@@ -63,7 +63,7 @@ public class FtpUtils {
      * @param remote 远程文件路径
      * @param local 本地文件路径
      * @return 上传的状态
-     * @throws IOException
+     * @throws IOException n/a
      */
     public DownloadStatus download(String remote, String local) throws IOException {
         //设置被动模式 
@@ -156,7 +156,7 @@ public class FtpUtils {
      * @param local 本地文件名称，绝对路径
      * @param remote 远程文件路径，使用/home/directory1/subdirectory/file.ext或是 http://www.guihua.org /subdirectory/file.ext 按照Linux上的路径指定方式，支持多级目录嵌套，支持递归创建不存在的目录结构
      * @return 上传结果
-     * @throws IOException
+     * @throws IOException n/a
      */
     public UploadStatus upload(String local, String remote) throws IOException {
         //设置PassiveMode传输 
@@ -206,7 +206,7 @@ public class FtpUtils {
     /** */
     /**
      * 断开与远程服务器的连接
-     * @throws IOException
+     * @throws IOException n/a
      */
     public void disconnect() throws IOException {
         if (ftpClient.isConnected()) {
@@ -220,7 +220,7 @@ public class FtpUtils {
      * @param remote 远程服务器文件绝对路径
      * @param ftpClient FTPClient对象
      * @return 目录创建是否成功
-     * @throws IOException
+     * @throws IOException n/a
      */
     public UploadStatus CreateDirecroty(String remote, FTPClient ftpClient) throws IOException {
         UploadStatus status = UploadStatus.Create_Directory_Success;
@@ -264,8 +264,9 @@ public class FtpUtils {
      * @param remoteFile 远程文件名，在上传之前已经将服务器工作目录做了改变
      * @param localFile 本地文件File句柄，绝对路径
      * @param ftpClient FTPClient引用
-     * @return
-     * @throws IOException
+     * @param remoteSize n/a
+     * @return n/a
+     * @throws IOException n/a
      */
     public UploadStatus uploadFile(String remoteFile, File localFile, FTPClient ftpClient, long remoteSize) throws IOException {
         UploadStatus status;

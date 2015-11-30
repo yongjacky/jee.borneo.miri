@@ -28,8 +28,8 @@ public class StringUtils extends org.apache.commons.lang.StringUtils {
     }
 
     /**
-     * @param email
-     * @return
+     * @param email n/a
+     * @return n/a
      */
     public static boolean isEmail(String email) {
         if (isNotBlank(email)) {
@@ -209,9 +209,7 @@ public class StringUtils extends org.apache.commons.lang.StringUtils {
     }
 
     /**
-     * @param str : source string
-     * @param width : string's byte width
-     * @param ellipsis : a string added to abbreviate string bottom
+     * @param inputString : source string
      * @return String Object
      */
     public static String Html2Text(String inputString) {

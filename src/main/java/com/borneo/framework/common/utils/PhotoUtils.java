@@ -68,10 +68,11 @@ public class PhotoUtils {
 
     /**
      * jmagic install in linux catch some problem.so use this method replace with "resizeImage_jmagic"
-     * @param imgFrom
-     * @param imgTo
-     * @param height
-     * @param width
+     * @param imgFrom n/a
+     * @param imgTo n/a
+     * @param height n/a
+     * @param width n/a
+     * @return n/a
      */
     public static boolean resizeImage_java(String imgFrom, String imgTo, double height, double width) {
         try {
@@ -121,8 +122,9 @@ public class PhotoUtils {
      * Adjust the image size
      * @param imgFrom imgFrom Adjust the image source
      * @param imgTo Adjust the image save path
-     * @param height
-     * @param width
+     * @param height n/a
+     * @param width n/a
+     * @return n/a
      */
     public synchronized static boolean resizeImageJMagick(String imgFrom, String imgTo, double height, double width) {
         try {
@@ -181,10 +183,10 @@ public class PhotoUtils {
 
     /**
      * @author http://hi.baidu.com/szmneo/blog/item/13090b19201653bd4aedbcec.html
-     * @param imgFrom
-     * @param imgTo
-     * @param width
-     * @return
+     * @param imgFrom n/a
+     * @param imgTo n/a
+     * @param width n/a
+     * @return n/a
      */
     public synchronized static boolean resizeImage_fixedWidth(String imgFrom, String imgTo, double width) {
         try {
@@ -236,11 +238,11 @@ public class PhotoUtils {
 
     /**
      * @author http://hi.baidu.com/szmneo/blog/item/13090b19201653bd4aedbcec.html
-     * @param imgFrom
-     * @param imgTo
-     * @param height
-     * @param width
-     * @return
+     * @param imgFrom n/a
+     * @param imgTo n/a
+     * @param height n/a
+     * @param width n/a
+     * @return n/a
      */
     public synchronized static boolean resizeImage(String imgFrom, String imgTo, double height, double width) {
         try {
@@ -327,12 +329,12 @@ public class PhotoUtils {
 
     /**
      * Add Watermarking to image
-     * @param magickImage
-     * @param imageInfo
-     * @param imgTo
-     * @param location
-     * @param text
-     * @throws MagickException
+     * @param magickImage n/a
+     * @param imageInfo n/a
+     * @param imgTo n/a
+     * @param location n/a
+     * @param text n/a
+     * @throws MagickException n/a
      */
     public static void addText2Img(MagickImage magickImage, ImageInfo imageInfo, String imgTo, int location, String text) throws MagickException {
         if (magickImage.getFileName().toUpperCase().endsWith("JPG") || magickImage.getFileName().toUpperCase().endsWith("JPEG")) {
@@ -422,8 +424,8 @@ public class PhotoUtils {
     }
 
     /**
-     * @param args
-     * @throws MagickException
+     * @param args n/a
+     * @throws MagickException na
      */
     public static void main(String[] args) throws Exception {
         resizeImage_fixedWidth("d:\\1298898019403_182.jpg", "c:\\2.jpg", 111);
@@ -468,12 +470,12 @@ public class PhotoUtils {
 
     /**
      * Add Watermarking to image
-     * @param magickImage
-     * @param imageInfo
-     * @param logoPath
-     * @param imgTo
-     * @param location
-     * @throws MagickException
+     * @param magickImage n/a
+     * @param imageInfo n/a
+     * @param logoPath n/a
+     * @param imgTo n/a
+     * @param location n/a
+     * @throws MagickException n/a
      */
     public static void addPic2Img(MagickImage magickImage, ImageInfo imageInfo, String logoPath, String imgTo, int location) throws MagickException {
         ImageInfo info = new ImageInfo();

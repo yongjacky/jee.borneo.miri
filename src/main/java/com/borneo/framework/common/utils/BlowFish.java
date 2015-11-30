@@ -103,14 +103,15 @@ public class BlowFish {
      * 
      * java BlowFish decode 'dmm!devel!emcom!' adv.emcom
      * 
-     * <pre>
+     * </pre>
      * 
-     * @throws UnsupportedEncodingException
-     * @throws BadPaddingException
-     * @throws IllegalBlockSizeException
-     * @throws NoSuchPaddingException
-     * @throws NoSuchAlgorithmException
-     * @throws InvalidKeyException
+     * @param args n/a
+     * @throws UnsupportedEncodingException n/a
+     * @throws BadPaddingException n/a
+     * @throws IllegalBlockSizeException n/a
+     * @throws NoSuchPaddingException n/a
+     * @throws NoSuchAlgorithmException n/a
+     * @throws InvalidKeyException n/a
      */
     public static void main(String[] args) throws InvalidKeyException, NoSuchAlgorithmException, NoSuchPaddingException, IllegalBlockSizeException, BadPaddingException, UnsupportedEncodingException {
 
