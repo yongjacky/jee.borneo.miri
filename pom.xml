@@ -26,7 +26,7 @@
 		<hibernate.version>3.3.2.GA</hibernate.version>
 		<hibernate-annotations.version>3.4.0.GA</hibernate-annotations.version>
 		<hibernate-validator.version>4.1.0.Final</hibernate-validator.version>
-		<commons-collections.version>3.2.1</commons-collections.version>
+		<commons-collections.version>3.2.2</commons-collections.version>
 		<javax.persistence.version>1.0.2</javax.persistence.version>
 		<wss4j.version>1.6.12</wss4j.version>
 		<zxing.version>3.2.1</zxing.version>
